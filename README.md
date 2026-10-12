@@ -1,6 +1,3 @@
-# spatial_uniformity
-Here, we developed a high-throughput phenotyping framework integrating UAV imaging, automated localization of planting units, Voronoi-based characterization of potential growing space and repeated GF observations to examine how early spatial uniformity is expressed during subsequent canopy development in rice. 
-
 # Rice Planting-Hill Detection with P2PNet
 
 A **P2PNet** model adapted to detect rice **planting hills (hills)** in UAV RGB
@@ -93,16 +90,15 @@ For each input image, the script writes to the `output/` folder:
 If you use this model, please cite the accompanying paper:
 
 ```bibtex
-@article{
-URL = {},
-author = { },
-title = {},
-journal = {},
-volume = {},
-number = {},
-pages = {},
-year = {},
-doi = {},
+@article{shi2026spatial,
+  title  = {Spatial uniformity links potential growing space to canopy development and yield formation in rice},
+  author = {Shi, Ming and Gao, Yangmingrui and Ding, Yanfeng and Li, Weiwei and Liu, Shouyang},
+  journal = {},
+  volume  = {},
+  pages   = {},
+  year   = {2026},
+  doi    = {}
+}
 ```
 
 ## License

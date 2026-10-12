@@ -1,0 +1,8 @@
+# Core dependencies for P2PNet rice-hill inference (cross-platform).
+# For the exact, frozen environment use environment.yml instead.
+torch==1.9.0
+torchvision==0.10.0
+numpy==1.21.6
+scipy==1.7.3
+pillow==9.1.0
+opencv-python>=4.5
