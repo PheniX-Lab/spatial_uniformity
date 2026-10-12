@@ -90,14 +90,16 @@ For each input image, the script writes to the `output/` folder:
 If you use this model, please cite the accompanying paper:
 
 ```bibtex
-@article{shi2026spatial,
-  title  = {Spatial uniformity links potential growing space to canopy development and yield formation in rice},
-  author = {Shi, Ming and Gao, Yangmingrui and Ding, Yanfeng and Li, Weiwei and Liu, Shouyang},
-  journal = {},
-  volume  = {},
-  pages   = {},
-  year   = {2026},
-  doi    = {}
+@article{
+URL = {},
+author = { },
+title = {},
+journal = {},
+volume = {},
+number = {},
+pages = {},
+year = {},
+doi = {},
 }
 ```
 
