@@ -12,7 +12,7 @@ training procedure are described in the accompanying paper.
 
 | Input UAV image | Detected hills (red dots) |
 | --- | --- |
-| ![input](examples/example_input.jpg) | ![output](examples/example_output.jpg) |
+| <img width="1957" height="1448" alt="example_input" src="https://github.com/user-attachments/assets/4f5f3631-d757-41cf-99e0-c4617155a8f1" />| <img width="1957" height="1448" alt="example_output" src="https://github.com/user-attachments/assets/139d06e0-4202-4f58-900d-3f11f1c50e77" />|
 
 ## Model architecture
 
@@ -25,7 +25,7 @@ and two task heads:
 
 Points whose confidence is above a threshold are kept as detected hills.
 
-![P2PNet architecture](net.png)
+<img width="1317" height="569" alt="net" src="https://github.com/user-attachments/assets/7f8ea809-3b62-4814-9803-7a2b98ea772f" />
 
 ## Hardware
 
