@@ -1,13 +1,13 @@
-# Rice Planting-Hill Detection with P2PNet
+# Rice Hill Detection and Spatial Uniformity
 
 A **P2PNet** model adapted to detect rice **planting hills** in UAV RGB
 images. The model was trained on more than 1,600 manually annotated UAV
 images and enables high-throughput localization of rice hills.
 
 The current release provides the trained hill-detection model, inference
-code and environment configuration. Spatial uniformity calculation code
-will be added separately. The training workflow and manually annotated
-training dataset are not released; the network architecture and training
+code, environment configuration and Voronoi-based spatial uniformity
+calculation. The training workflow and manually annotated training dataset
+are not released; the network architecture and training
 procedure are described in the accompanying manuscript.
 
 | Input UAV image | Detected hills (red dots) |
@@ -86,7 +86,11 @@ spatial_uniformity/
 │   └── best_mae.pth
 ├── input/
 │   └── your_image.jpg
+├── examples/
+│   ├── p2pnet/                 # Test images and detection reference counts
+│   └── spatial_uniformity/     # Coordinates, boundaries and reference results
 ├── predict.py
+├── spatial_uniformity.py
 ├── environment.yml
 ├── requirements.txt
 ├── LICENSE
@@ -145,6 +149,18 @@ For example, to use the second visible GPU:
 python predict.py --gpu_id 1
 ```
 
+### Included test images
+
+Three test images are provided in `examples/p2pnet/images/`:
+
+```bash
+python predict.py --input_dir examples/p2pnet/images --output_dir output/p2pnet_examples --weight_path checkpoints/best_mae.pth --threshold 0.55
+```
+
+See [the P2PNet examples README](examples/p2pnet/README.md) for reference
+detection counts. These images are independent of the coordinate datasets
+used in the spatial uniformity examples.
+
 ## Outputs
 
 For each input image, the script saves:
@@ -177,9 +193,26 @@ with the same filenames.
 
 ## Inference verification
 
-The inference code and supplied checkpoint were tested on three UAV images
-on Windows using both CPU and GPU. Both devices produced the same detection
-counts and integer drawing coordinates.
+The inference code and supplied checkpoint were tested on Windows using
+both CPU and GPU.
+
+## Spatial uniformity calculation
+
+`spatial_uniformity.py` calculates `1 - CV` from complete Voronoi cell areas
+inside a user-specified analysis window. It requires georeferenced hill
+coordinates and window vertices in the same projected planar coordinate system.
+Pixel-to-ground coordinate conversion must be completed before this step.
+
+Three projected-coordinate datasets from 2023, a combined boundary
+table and expected results are provided in
+[examples/spatial_uniformity](examples/spatial_uniformity/README.md).
+
+```bash
+python spatial_uniformity.py --points examples/spatial_uniformity/points/plot128_DSC00788.csv --boundary examples/spatial_uniformity/boundaries.csv --plot-id 128 --output-dir output/uniformity_examples
+```
+
+The calculation uses the sample standard deviation (`ddof=1`). Unbounded
+cells and cells extending outside the analysis window are excluded, not clipped.
 
 ## Acknowledgements
 
