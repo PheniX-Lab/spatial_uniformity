@@ -233,7 +233,7 @@ The accompanying manuscript is:
 **Spatial uniformity links potential growing space to canopy development
 and yield formation in rice**
 
-Ming Shi, Yangmingrui Gao, Yanfeng Ding, Weiwei Li and Shouyang Liu.
+Ming Shi, Yangmingrui Gao, Yanfeng Ding, Ganghua Li, Weiwei Li and Shouyang Liu.
 
 Publication details and the final BibTeX entry will be added when available.
 
